@@ -13,11 +13,7 @@ This plugin fetches the discussions from the given configured repositories (if e
 - Support schema type customization through `customSchemaTypes` option.
 - Any extended discussion field which ends with `imageUrl` will be automatically optimized and to enable it you can extend the field types.
 
-![image](https://user-images.githubusercontent.com/51419598/194051081-5f30f1ca-b580-4249-b374-45469e9c0fa9.png)
-![image](https://user-images.githubusercontent.com/51419598/194051270-5a7fead1-13aa-4cc5-b490-6f370f6aedf9.png)
-![image](https://user-images.githubusercontent.com/51419598/194051245-78367076-3178-491d-a208-cb4a3ac2ea60.png)
-![image](https://user-images.githubusercontent.com/51419598/194051206-ec8bfac4-bcc0-4c8b-9f0a-4267d72b98d7.png)
-![image](https://user-images.githubusercontent.com/51419598/194051344-0a5770fa-1269-4467-9024-37039aac2f75.png)
+![Group 4 (1)](https://user-images.githubusercontent.com/51419598/194061391-b75a77c0-7344-4f05-b0b6-5eb589287f6c.png)
 
 ## Built-in features
 
