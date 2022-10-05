@@ -90,7 +90,7 @@ const config: GatsbyConfig = {
         // Likely to be a Announcement type discussion category since only
         // users with repo write access can create discussions with this category
         // This allow a moderation when newcomers post something.
-        categorySlugs: [`Published`],
+        categorySlugs: blogConfig.discussionCategories,
         customSchemaTypes: {
           GitHubDiscussion: [
             // See Gatsby custom schema types:

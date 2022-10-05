@@ -3,6 +3,12 @@ const config = {
   repo: `rintt`,
 
   /**
+   * Slugs to include in the data-source, if not provided (null) all discussions will be fetched without any filter.
+   * That means, if null, anyone can publish to your blog using a non-protected category.
+   */
+  discussionCategories: [`Published`],
+
+  /**
    * Global blog base path if any (e.g: '/myblog'). Set to [null] to use '/'.
    */
   basePath: null,
@@ -33,13 +39,18 @@ const config = {
   slugPattern: `{TITLE}-{DATE}`,
 
   /**
-   * Your posts will be shown at [/blog/myblog-post-title-123-abc].
+   * Your posts will be shown at [mydomain.com/blog/myblog-post-title-123-abc].
    * Set to null if you want to omit the basepath.
    */
   postsPath: `/blog`,
 
   /**
    * Base URL for all blog content.
+   *
+   * Use `https://yourusername.github.io/your-repo-name` if you're using a common repository.
+   *
+   * If you are using `https://github.com/yourusername/yourusername.github.io`
+   * then you want to use `https://yourusername.github.io/` (without the path).
    */
   domain: `https://alexrintt.github.io`,
 };
