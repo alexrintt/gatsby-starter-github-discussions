@@ -13,13 +13,13 @@ This plugin fetches the discussions from the given configured repositories (if e
 - Support schema type customization through `customSchemaTypes` option.
 - Any extended discussion field which ends with `imageUrl` will be automatically optimized and to enable it you can extend the field types.
 
-![Group 4 (1)](https://user-images.githubusercontent.com/51419598/194061391-b75a77c0-7344-4f05-b0b6-5eb589287f6c.png)
-
 ## Built-in features
 
 - Thumbnail image (when publishing a new discussion use an markdown image, e.g `![...]()` or `<img src="..." />` in the first line of the discussion body and it will be used as thumbnail).
 - Single config file `blog.config.ts`.
 - TypeScript by default.
+
+![Group 4 (1)](https://user-images.githubusercontent.com/51419598/194061391-b75a77c0-7344-4f05-b0b6-5eb589287f6c.png)
 
 <samp>
 
