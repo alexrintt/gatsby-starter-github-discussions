@@ -20,9 +20,9 @@ function extendDiscussionType(discussion: any) {
   function getThumbnailUrlIfAny(string: string): string | undefined {
     const source = string.trim();
     const isMarkImg = source.startsWith(`![`);
-    const isMarkHtml = source.startsWith(`<img`);
+    const isHtmlImg = source.startsWith(`<img`);
 
-    if (!isMarkImg && !isMarkHtml) {
+    if (!isMarkImg && !isHtmlImg) {
       return undefined;
     }
 
@@ -73,16 +73,32 @@ const config: GatsbyConfig = {
     {
       resolve: `@alexrintt/gatsby-source-github-discussions`,
       options: {
-        owner: `alexrintt`,
-        repo: `rintt`,
+        // Remember you can always create a second instance of
+        // this plugin and assign a different `instance` option
+        // to fetch from discussion from multiple repositories.
+        owner: blogConfig.owner,
+        repo: blogConfig.repo,
+
+        // This plugin uses the GitHub GraphQL API to query data
+        // and this API requires authentication.
         githubToken: process.env.GITHUB_TOKEN,
+
         // You can use this key to filter any resource.
-        // So you can use multiple instances of this plugin, keep the relationships
-        // and filter then.
+        // So you can use multiple instances of this plugin and keep the relationships.
         instance: `Post`,
+
+        // Likely to be a Announcement type discussion category since only
+        // users with repo write access can create discussions with this category
+        // This allow a moderation when newcomers post something.
         categorySlugs: [`Published`],
         customSchemaTypes: {
           GitHubDiscussion: [
+            // See Gatsby custom schema types:
+            // https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/.
+            //
+            // In this case we're taking the first line as thumbnail if it's a image URL (See [extendDiscussionType] function).
+            // But we need to tell Gatsby that this is field [thumbnailImageUrl]
+            // is a image and should be optimized as one.
             `thumbnailImageUrl: File @link(from: "fields.thumbnailImageUrl")`,
           ],
         },

@@ -1,4 +1,7 @@
 const config = {
+  owner: `alexrintt`,
+  repo: `rintt`,
+
   /**
    * Global blog base path if any (e.g: '/myblog'). Set to [null] to use '/'.
    */
